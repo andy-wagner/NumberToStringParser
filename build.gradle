@@ -1,0 +1,19 @@
+apply plugin: 'java'
+apply plugin: 'maven-publish'
+
+repositories {
+    mavenCentral()
+    jcenter()
+}
+
+task sourceJar(type: Jar) {
+  classifier "sources"
+}
+
+publishing { 
+    publications { 
+        NumbersToText(MavenPublication) { 
+            artifact jar
+        } 
+    } 
+}
